@@ -7,15 +7,15 @@
 }
 
 @test "underlay test" {
-    run docker exec -it bats-ros2 \
+    run docker exec bats-ros2 \
         bash -c "echo 'root - memlock unlimited' >> /etc/security/limits.conf"
     [ "${status}" -eq 0 ]
 
-    run docker exec -it bats-ros2 \
+    run docker exec bats-ros2 \
         bash -c "echo 'ulimit -l unlimited' >> /root/.bashrc"
     [ "${status}" -eq 0 ]
 
-    docker exec -it bats-ros2 \
+    run docker exec bats-ros2 \
         /root/ros2_ws/src/ament/ament_tools/scripts/ament.py test
     [ "${status}" -eq 0 ]
 }
