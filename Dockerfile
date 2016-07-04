@@ -12,7 +12,7 @@ RUN locale-gen en_US en_US.UTF-8 \
  && echo "deb http://packages.osrfoundation.org/gazebo/ubuntu xenial main" \
     > /etc/apt/sources.list.d/gazebo-latest.list \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
     build-essential \
     clang-format \
     cmake \
