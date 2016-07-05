@@ -12,6 +12,8 @@ env:
     - TEST_BASEPATH=/root/ros2_ws/src/ros
     - TEST_BASEPATH=/root/ros2_ws/src/ros2
     - TEST_BASEPATH=/root/ros2_ws/src/vendor
+    - ROS2_VERSION=latest
+    - ROS2_VERSION=alpha6
 
 before_install:
   - apt-cache madison docker-engine
@@ -23,5 +25,5 @@ before_install:
   - sudo apt-get install -y bats
 
 script:
-  - docker build -t hrektts/ros2:bats .
+  - docker build --build-arg ROS2_VERSION=${ROS2_VERSION} -t hrektts/ros2:bats .
   - travis_wait 30 bats test

@@ -41,7 +41,8 @@ RUN adduser --disabled-login --gecos 'Developper' dev \
  && gpasswd -a dev sudo
 
 ENV HOME /root
-ENV ROS2_VERSION alpha6
+ARG ROS2_VERSION
+ENV ROS2_VERSION ${ROS2_VERSION:-latest}
 
 RUN mkdir -p ${HOME}/ros2_ws/src
 WORKDIR ${HOME}/ros2_ws
