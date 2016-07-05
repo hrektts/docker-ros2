@@ -7,11 +7,11 @@ env:
   global:
     - DOCKER_VERSION=1.11.2-0~trusty
   matrix:
-    - TEST_BASEPATH=ament
-    - TEST_BASEPATH=ePromisa
-    - TEST_BASEPATH=ros
-    - TEST_BASEPATH=ros2
-    - TEST_BASEPATH=vendor
+    - TEST_BASEPATH=/root/ros2_ws/src/ament
+    - TEST_BASEPATH=/root/ros2_ws/src/ePromisa
+    - TEST_BASEPATH=/root/ros2_ws/src/ros
+    - TEST_BASEPATH=/root/ros2_ws/src/ros2
+    - TEST_BASEPATH=/root/ros2_ws/src/vendor
 
 before_install:
   - apt-cache madison docker-engine
