@@ -16,7 +16,7 @@
     [ "${status}" -eq 0 ]
 
     run docker exec bats-ros2 \
-        /root/ros2_ws/src/ament/ament_tools/scripts/ament.py test
+        /root/ros2_ws/src/ament/ament_tools/scripts/ament.py test ${TEST_BASEPATH}
     [ "${status}" -eq 0 ]
 }
 

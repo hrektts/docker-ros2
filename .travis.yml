@@ -6,6 +6,12 @@ services:
 env:
   global:
     - DOCKER_VERSION=1.11.2-0~trusty
+  matrix:
+    - TEST_BASEPATH=ament
+    - TEST_BASEPATH=ePromisa
+    - TEST_BASEPATH=ros
+    - TEST_BASEPATH=ros2
+    - TEST_BASEPATH=vendor
 
 before_install:
   - apt-cache madison docker-engine
@@ -18,4 +24,4 @@ before_install:
 
 script:
   - docker build -t hrektts/ros2:bats .
-  - travis_wait 50 bats test
+  - travis_wait 30 bats test
