@@ -17,4 +17,5 @@ before_install:
   - sudo apt-get install -y bats
 
 script:
-  - travis_wait 90 make test
+  - docker build -t hrektts/ros2:bats .
+  - travis_wait 50 bats test
