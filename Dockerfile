@@ -26,6 +26,7 @@ RUN locale-gen en_US en_US.UTF-8 \
     python3-coverage \
     python3-dev \
     python3-empy \
+    python3-flake8 \
     python3-mock \
     python3-nose \
     python3-pep8 \
