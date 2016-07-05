@@ -7,13 +7,15 @@ env:
   global:
     - DOCKER_VERSION=1.11.2-0~trusty
   matrix:
-    - TEST_BASEPATH=/root/ros2_ws/src/ament
-    - TEST_BASEPATH=/root/ros2_ws/src/eProsima
-    - TEST_BASEPATH=/root/ros2_ws/src/ros
-    - TEST_BASEPATH=/root/ros2_ws/src/ros2
-    - TEST_BASEPATH=/root/ros2_ws/src/vendor
-    - ROS2_VERSION=latest
-    - ROS2_VERSION=alpha6
+    - TEST_BASEPATH:
+        - /root/ros2_ws/src/ament
+        - /root/ros2_ws/src/eProsima
+        - /root/ros2_ws/src/ros
+        - /root/ros2_ws/src/ros2
+        - /root/ros2_ws/src/vendor
+    - ROS2_VERSION:
+        - latest
+        - alpha6
 
 before_install:
   - apt-cache madison docker-engine
