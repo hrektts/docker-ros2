@@ -8,7 +8,7 @@ env:
     - DOCKER_VERSION=1.11.2-0~trusty
   matrix:
     - TEST_BASEPATH=/root/ros2_ws/src/ament
-    - TEST_BASEPATH=/root/ros2_ws/src/ePromisa
+    - TEST_BASEPATH=/root/ros2_ws/src/eProsima
     - TEST_BASEPATH=/root/ros2_ws/src/ros
     - TEST_BASEPATH=/root/ros2_ws/src/ros2
     - TEST_BASEPATH=/root/ros2_ws/src/vendor
