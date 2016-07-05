@@ -7,11 +7,12 @@ env:
   global:
     - DOCKER_VERSION=1.11.2-0~trusty
   matrix:
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ament
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/eProsima
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/vendor
+    include:
+      - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ament
+      - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/eProsima
+      - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros
+      - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2
+      - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/vendor
     allow_failures:
       - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ament
       - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/eProsima
