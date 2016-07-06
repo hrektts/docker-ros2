@@ -10,12 +10,48 @@ env:
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ament
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/eProsima
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/common_interfaces
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/demos
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/examples
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/launch
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rcl
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rcl_interfaces
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rclc
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rclcpp
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rclpy
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/realtime_support
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_connext
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_implementation
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_opensplice
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/ros1_bridge
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl_dds
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/system_test
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/tlsf
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/vendor
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ament
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/eProsima
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros
-    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/common_interfaces
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/demos
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/examples
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/launch
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rcl
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rcl_interfaces
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rclc
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rclcpp
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rclpy
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/realtime_support
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_connext
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_implementation
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rmw_opensplice
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/ros1_bridge
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl_dds
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/system_test
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/tlsf
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/vendor
 
 before_install:
