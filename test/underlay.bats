@@ -11,12 +11,8 @@
         bash -c "echo 'root - memlock unlimited' >> /etc/security/limits.conf"
     [ "${status}" -eq 0 ]
 
-    run docker exec bats-ros2 \
-        bash -c "echo 'ulimit -l unlimited' >> /root/.bashrc"
-    [ "${status}" -eq 0 ]
-
-    run docker exec bats-ros2 \
-        /root/ros2_ws/src/ament/ament_tools/scripts/ament.py test ${TEST_BASEPATH}
+    run docker exec bats-ros2 bash -c \
+        "source /root/ros2_ws/install/local_setup.bash && ulimit -l unlimited && OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml /root/ros2_ws/src/ament/ament_tools/scripts/ament.py test ${TEST_BASEPATH}"
     [ "${status}" -eq 0 ]
 }
 

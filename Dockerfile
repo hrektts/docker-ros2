@@ -40,20 +40,16 @@ RUN adduser --disabled-login --gecos 'Developper' dev \
  && passwd -d dev \
  && gpasswd -a dev sudo
 
-ENV HOME /root
 ARG ROS2_VERSION
 ENV ROS2_VERSION ${ROS2_VERSION:-latest}
 
-RUN mkdir -p ${HOME}/ros2_ws/src
-WORKDIR ${HOME}/ros2_ws
+RUN mkdir -p /root/ros2_ws/src
+WORKDIR /root/ros2_ws
 RUN wget https://raw.githubusercontent.com/ros2/ros2/release-${ROS2_VERSION}/ros2.repos \
- && vcs import ${HOME}/ros2_ws/src < ros2.repos
+ && vcs import /root/ros2_ws/src < ros2.repos
 
 RUN touch src/eProsima/ROS-RMW-Fast-RTPS-cpp/AMENT_IGNORE \
  && src/ament/ament_tools/scripts/ament.py build --build-tests --symlink-install
 
-COPY entrypoint.sh /sbin/entrypoint.sh
-RUN sudo chmod 755 /sbin/entrypoint.sh
-
-ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["bash"]
+RUN echo ". /root/ros2_ws/install/local_setup.bash" >> /root/.bashrc \
+ && echo "export OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml" >> /root/.bashrc
