@@ -27,7 +27,7 @@ env:
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/ros1_bridge
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl_dds
-    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/system_test
+    - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/system_tests
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/ros2/tlsf
     - ROS2_VERSION=$(cat VERSION) TEST_BASEPATH=/root/ros2_ws/src/vendor
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ament
@@ -50,7 +50,7 @@ env:
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/ros1_bridge
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/rosidl_dds
-    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/system_test
+    - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/system_tests
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/ros2/tlsf
     - ROS2_VERSION=latest TEST_BASEPATH=/root/ros2_ws/src/vendor
 
