@@ -12,7 +12,7 @@ RUN locale-gen en_US en_US.UTF-8 \
  && echo "deb http://packages.osrfoundation.org/gazebo/ubuntu xenial main" \
     > /etc/apt/sources.list.d/gazebo-latest.list \
  && apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -qy \
     build-essential \
     clang-format \
     cmake \
@@ -26,6 +26,7 @@ RUN locale-gen en_US en_US.UTF-8 \
     python3-coverage \
     python3-dev \
     python3-empy \
+    python3-flake8 \
     python3-mock \
     python3-nose \
     python3-pep8 \
@@ -39,19 +40,16 @@ RUN adduser --disabled-login --gecos 'Developper' dev \
  && passwd -d dev \
  && gpasswd -a dev sudo
 
-ENV HOME /root
-ENV ROS2_VERSION alpha6
+ARG ROS2_VERSION
+ENV ROS2_VERSION ${ROS2_VERSION:-alpha6}
 
-RUN mkdir -p ${HOME}/ros2_ws/src
-WORKDIR ${HOME}/ros2_ws
+RUN mkdir -p /root/ros2_ws/src
+WORKDIR /root/ros2_ws
 RUN wget https://raw.githubusercontent.com/ros2/ros2/release-${ROS2_VERSION}/ros2.repos \
- && vcs import ${HOME}/ros2_ws/src < ros2.repos
+ && vcs import /root/ros2_ws/src < ros2.repos
 
 RUN touch src/eProsima/ROS-RMW-Fast-RTPS-cpp/AMENT_IGNORE \
  && src/ament/ament_tools/scripts/ament.py build --build-tests --symlink-install
 
-COPY entrypoint.sh /sbin/entrypoint.sh
-RUN sudo chmod 755 /sbin/entrypoint.sh
-
-ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["bash"]
+RUN echo ". /root/ros2_ws/install/local_setup.bash" >> /root/.bashrc \
+ && echo "export OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml" >> /root/.bashrc
